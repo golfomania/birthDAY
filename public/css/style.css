@@ -10,3 +10,14 @@
 #result_text {
   display: none;
 }
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+span {
+  font-size: 1rem;
+}

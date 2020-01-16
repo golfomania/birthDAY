@@ -31,9 +31,37 @@ function checkKey(e) {
 function displayWeekday(e) {
   result_text.style.display = "block";
 
-  const x = new calc(text_input.value);
+  console.log(text_input.value);
+  const x = new Datecalc(text_input.value);
+  console.log(x);
+  console.log(x.day);
 
-  result_text.innerHTML = x.birthday;
+  switch (x.day) {
+    case 0:
+      result_text.innerHTML = `<span>You were born on a</span> <br> Sunday`;
+      break;
+    case 1:
+      result_text.innerHTML = `<span>You were born on a</span> <br> Monday`;
+      break;
+    case 2:
+      result_text.innerHTML = `<span>You were born on a</span> <br> Tuesday`;
+      break;
+    case 3:
+      result_text.innerHTML = `<span>You were born on a</span> <br> Wednesday`;
+      break;
+    case 4:
+      result_text.innerHTML = `<span>You were born on a</span> <br> Thursday`;
+      break;
+    case 5:
+      result_text.innerHTML = `<span>You were born on a</span> <br> Friday`;
+      break;
+    case 6:
+      result_text.innerHTML = `<span>You were born on a</span> <br> Saturday`;
+      break;
+    default:
+      break;
+  }
+
   text_input.value = "";
   window.setTimeout(hideResult, 5000);
 }
@@ -45,7 +73,7 @@ function hideResult() {
 }
 
 /* birthDAY constructor */
-function calc(givenDate) {
+function Datecalc(givenDate) {
   this.birthday = new Date(givenDate);
-  return this.birthday;
+  this.day = this.birthday.getDay();
 }
