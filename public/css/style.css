@@ -1,0 +1,12 @@
+.container > div {
+  margin-top: 150px;
+}
+
+#result > div > p {
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+#result_text {
+  display: none;
+}
